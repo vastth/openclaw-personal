@@ -1,0 +1,17 @@
+{
+  "model": "sonnet",
+  "env": {
+    "MAX_THINKING_TOKENS": "10000",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "haiku"
+  },
+  "disabledMcpServers": [],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit(file_path=**/TASK_BOARD.md*)",
+        "command": "echo '[Pre-Review Gate] Reminder: REVIEW->DONE requires /oc-review pass + handoff record. Verify before proceeding.'"
+      }
+    ]
+  }
+}

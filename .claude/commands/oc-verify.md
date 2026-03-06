@@ -1,0 +1,17 @@
+# /oc-verify
+
+对当前变更执行最小验证并输出可交接结果。
+
+## Required Output
+
+- Files Changed
+- Commands Run
+- Result
+- Residual Risks
+- Rollback Point
+
+## Verification Policy
+
+- 配置变更: 校验格式 + 关键行为。
+- 文档变更: 校验链接/路径有效性。
+- 代码变更: 至少执行 1 个可复现实验或测试命令。
