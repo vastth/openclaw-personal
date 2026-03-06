@@ -1,6 +1,6 @@
-# OpenClaw Verification Rule
+# OpenClaw 验证规则
 
-## Minimum Validation
+## 最低验证要求
 
 每次改动后，至少完成以下其中两项:
 
@@ -8,15 +8,15 @@
 - 关键路径命令验证（例如 `openclaw gateway status` 或等价检查）。
 - 与改动相关的 smoke test 或行为验证。
 
-## Reporting Format
+## 报告格式
 
-在 handoff 中使用固定结构:
+在 handoff 中使用固定结构：
 
-- Commands Run
-- Result
-- Not Run Yet
+- 执行命令
+- 结果
+- 尚未执行
 
-## No Silent Assumptions
+## 不允许静默假设
 
 - 未验证项必须显式声明。
 - 如果工具或网络受限，写明替代验证方案。

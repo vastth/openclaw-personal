@@ -18,8 +18,9 @@
 | OC-008 | 双向角色模型重构（模式 A/B） | Claude Code | DONE | `.claude/rules/**`, `.claude/commands/**`, `CLAUDE.md`, `.github/**` | 2026-03-06 | 角色不固定 → 模式 A（Copilot 实现）+ 模式 B（Claude Code 架构） |
 | OC-009 | 同步 Claude Code 架构改动归档 | Copilot | DONE | `docs/TASK_BOARD.md`, `docs/handoffs/2026-03-06.md` | 2026-03-06 | 归档 OC-006/007/008 变更要点与验证口径 |
 | OC-010 | 安全清理并准备 GitHub 推送 | Copilot | DONE | `.gitignore`, `openclaw.example.json`, `docs/**` | 2026-03-06 | 已初始化 git 并完成安全首提，等待创建 GitHub 远程 |
+| OC-011 | 项目可汉化内容整理与中文优先约束 | Copilot | DONE | `CLAUDE.md`, `.github/**`, `.claude/**`, `docs/**` | 2026-03-06 | 已汉化关键说明与模板，并将两个 agent 默认中文要求写入规则 |
 
-## Status Legend
+## 状态说明
 
 - `TODO`: 未开始
 - `IN_PROGRESS`: 进行中

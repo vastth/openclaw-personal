@@ -54,3 +54,9 @@
 - `.claude` 补强 Claude Code 的把关能力（review + hooks + subagents）。
 - `.github/copilot-instructions.md` 补强 Copilot 的实现质量。
 - 交接仍统一写入 `docs/TASK_BOARD.md` 与 `docs/handoffs/`。
+
+## 语言约定
+
+- 两个 Agent 在与用户交互时，默认尽量使用中文。
+- 新增或维护的项目文档、handoff、验证报告默认使用中文。
+- 代码注释默认优先使用中文；若涉及 API、协议、配置 key 或固定术语，可保留英文。

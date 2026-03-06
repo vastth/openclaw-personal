@@ -2,15 +2,15 @@
 
 对当前变更执行最小验证并输出可交接结果。
 
-## Required Output
+## 必要输出
 
-- Files Changed
-- Commands Run
-- Result
-- Residual Risks
-- Rollback Point
+- 改动文件
+- 执行命令
+- 结果
+- 剩余风险
+- 回滚点
 
-## Verification Policy
+## 验证策略
 
 - 配置变更: 校验格式 + 关键行为。
 - 文档变更: 校验链接/路径有效性。

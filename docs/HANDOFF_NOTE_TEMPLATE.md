@@ -1,49 +1,49 @@
-# Handoff Note Template
+# 交接记录模板
 
 > 复制本模板到 `docs/handoffs/YYYY-MM-DD.md`，每次交接追加一段。
 
-## Header
+## 头部信息
 
-- Timestamp:
+- 时间戳:
 - From Agent: `Copilot` | `Claude`
 - To Agent: `Copilot` | `Claude`
-- Task ID:
-- Task Title:
-- Status: `IN_PROGRESS` | `BLOCKED` | `REVIEW` | `DONE`
+- 任务 ID:
+- 任务标题:
+- 状态: `IN_PROGRESS` | `BLOCKED` | `REVIEW` | `DONE`
 
-## What Was Done
+## 已完成内容
 
-- Summary:
-- Files Changed:
+- 摘要:
+- 改动文件:
   - `path/to/file`
-- Behavior Change:
+- 行为变化:
 
-## Validation
+## 验证情况
 
-- Commands Run:
+- 执行命令:
   - `...`
-- Result:
-- Not Run Yet:
+- 结果:
+- 尚未执行:
 
-## Decisions
+## 关键决策
 
-- Decision 1:
-- Reason:
-- Alternative Rejected:
+- 决策 1:
+- 原因:
+- 放弃方案:
 
-## Risks / Rollback
+## 风险与回滚
 
-- Risk:
-- Rollback Point (commit/file backup):
+- 风险:
+- 回滚点（commit / 文件备份）:
 
-## Next Action (First Command)
+## 下一步动作（第一条命令）
 
 - `...`
 
-## Notes for Next Agent
+## 给下一位 Agent 的说明
 
-- Open Questions:
-- Assumptions:
-- Required Context Files:
+- 待确认问题:
+- 前提假设:
+- 必读上下文文件:
   - `docs/TASK_BOARD.md`
   - `docs/AGENT_COLLAB_PROTOCOL.md`

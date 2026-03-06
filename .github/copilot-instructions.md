@@ -1,4 +1,4 @@
-# Copilot Instructions
+# Copilot 项目指引
 
 本仓库使用双 Agent 协作，**角色跟着任务走，不固定**。
 
@@ -14,23 +14,31 @@
 
 **关键规则：REVIEW → DONE 必须经过另一方确认，不允许自审自过。**
 
-## Required Read Order (before coding)
+## 开始编码前的必读顺序
 
 1. `docs/AGENT_COLLAB_PROTOCOL.md`
 2. `docs/TASK_BOARD.md`
-3. Latest file in `docs/handoffs/`
+3. `docs/handoffs/` 中最新的文件
 4. `docs/standards/` — 特别是 `config-conventions.md` 和 `security-checklist.md`
 
-## Must Follow
+## 必须遵守
 
-- Update `docs/TASK_BOARD.md` to `IN_PROGRESS` before any code edits.
-- Set one owner per task and respect file locks.
-- On transfer, append a handoff record in `docs/handoffs/YYYY-MM-DD.md`.
-- Use the task flow: `TODO -> IN_PROGRESS -> REVIEW -> DONE`.
+- 开始任何代码编辑前，先把 `docs/TASK_BOARD.md` 更新为 `IN_PROGRESS`。
+- 每个任务只允许一个 owner，并遵守文件锁。
+- 交接时，必须在 `docs/handoffs/YYYY-MM-DD.md` 追加记录。
+- 遵循任务流转：`TODO -> IN_PROGRESS -> REVIEW -> DONE`。
 - **作为实现者：REVIEW 前自查 `docs/standards/security-checklist.md`**。
 - **作为验证者：按 `/oc-validate` 流程输出验证报告**。
 
-## Coding Standards（作为实现者时）
+## 中文优先约定
+
+- 与用户的自然语言交互、解释、总结、风险说明默认尽量使用中文。
+- 新增或维护的 Markdown 文档、handoff、验证报告默认使用中文。
+- 代码注释默认尽量使用中文；若涉及 API、协议、配置 key、开源项目原名或固定术语，可保留英文。
+- 命令、路径、环境变量、配置 key、协议字段名保持原样，不做强制翻译。
+- 若用户明确要求英文，或目标文件必须保持英文语境，再按实际需要切换。
+
+## 编码规范（作为实现者时）
 
 参见 `docs/standards/` 目录：
 
@@ -38,19 +46,19 @@
 - **Code**: 函数 ≤50 行、文件 ≤400 行、显式错误处理、不提交调试代码。
 - **Security**: 不硬编码密钥、不拼接未转义用户输入、不静默失败。
 
-## Validation Focus（作为验证者时）
+## 验证重点（作为验证者时）
 
 - 格式验证：JSON/JSON5 可解析、Markdown 结构完整。
 - 行为验证：实际运行命令，确认改动可用。
 - 回归检查：改动是否影响已有功能。
 - 范围检查：改动是否超出 handoff 声明范围。
 
-## For Every Completion
+## 每次完成时都要包含
 
-Include:
+请至少包含：
 
-- Changed files
-- What was validated and how
-- Self-check against `docs/standards/security-checklist.md` (作为实现者) 或 `/oc-validate` 报告 (作为验证者)
-- Known risks
-- Exact next command/action for the other agent
+- 改动文件
+- 验证了什么、如何验证
+- 针对 `docs/standards/security-checklist.md` 的自查（实现者）或 `/oc-validate` 报告（验证者）
+- 已知风险
+- 给另一位 Agent 的明确下一条命令/动作
