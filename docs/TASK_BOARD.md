@@ -20,6 +20,7 @@
 | OC-010 | 安全清理并准备 GitHub 推送 | Copilot | DONE | `.gitignore`, `openclaw.example.json`, `docs/**` | 2026-03-06 | 已初始化 git 并完成安全首提，等待创建 GitHub 远程 |
 | OC-011 | 项目可汉化内容整理与中文优先约束 | Copilot | DONE | `CLAUDE.md`, `.github/**`, `.claude/**`, `docs/**` | 2026-03-06 | 已汉化关键说明与模板，并将两个 agent 默认中文要求写入规则 |
 | OC-012 | README 中文首页与 Markdown 持续汉化 | Copilot | DONE | `README.md`, `docs/**`, `.claude/**` | 2026-03-06 | 已补中文首页、继续汉化高频 Markdown，并统一 handoff 中文字段风格 |
+| OC-013 | 跨设备克隆部署说明落地 | Copilot | DONE | `README.md`, `docs/**` | 2026-03-06 | 已补跨设备部署指南，使仓库可作为新设备部署基座 |
 
 ## 状态说明
 

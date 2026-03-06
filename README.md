@@ -40,13 +40,26 @@
 3. 阅读最新的 `docs/handoffs/` 获取最近变更上下文。
 4. 如需本地运行，参考 `openclaw.example.json` 创建自己的 `openclaw.json`。
 
+## 跨设备部署
+
+如果你希望把当前仓库克隆到其他设备，并将其作为 OpenClaw 的部署基座使用，建议阅读：
+
+- `docs/DEPLOY_ON_NEW_DEVICE.md`
+
+简化理解：
+
+- Git 仓库负责同步规则、文档、脚本和示例配置
+- 新设备本地补齐真实 `openclaw.json`、凭据、身份和代理配置
+- 敏感信息与运行态数据不进入 Git，而是单独恢复
+
 ## 相关文档
 
 - `CLAUDE.md`
 - `.github/copilot-instructions.md`
 - `docs/HANDOFF_NOTE_TEMPLATE.md`
 - `docs/standards/README.md`
+- `docs/DEPLOY_ON_NEW_DEVICE.md`
 
 ## 说明
 
-本仓库以个人使用与协作流程沉淀为主，不包含所有本地运行态文件。若需完整运行环境，请在本地根据示例配置补齐自己的密钥与渠道配置。
+本仓库以个人使用与协作流程沉淀为主，不包含所有本地运行态文件。若需完整运行环境，请在本地根据示例配置补齐自己的密钥、身份信息与渠道配置。
