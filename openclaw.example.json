@@ -1,9 +1,5 @@
 {
-  // Example OpenClaw config for sharing on GitHub.
-  // Copy to `openclaw.json` locally and fill in your own secrets.
-
   "env": {
-    // Set your real DeepSeek key locally.
     "DEEPSEEK_API_KEY": "YOUR_DEEPSEEK_API_KEY"
   },
 
