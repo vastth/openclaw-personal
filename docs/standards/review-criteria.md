@@ -1,4 +1,4 @@
-# OpenClaw Review Criteria
+# OpenClaw 审查标准
 
 **统一审查标准。** Copilot 自查时参照，Claude Code `/oc-review` 时作为评判依据。
 

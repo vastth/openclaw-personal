@@ -1,4 +1,4 @@
-# OpenClaw Config Conventions
+# OpenClaw 配置规范
 
 本文档定义 `openclaw.json` 及项目内所有 JSON5 / JSON 配置文件的编写规范。
 **Copilot 和 Claude Code 均须遵守。**

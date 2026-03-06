@@ -1,18 +1,18 @@
-# OpenClaw Security Rule
+# OpenClaw 安全规则
 
-## Secrets
+## 密钥处理
 
 - 不在任何文件中粘贴完整 API Key、Token、Secret（新增内容中）。
 - 输出日志时对密钥做脱敏，仅展示前后少量字符（如 `sk-0ae...efba`）。
 - 已存在于配置中的密钥不在对话/文档中复述。
 
-## Safe Operations
+## 安全操作
 
 - 禁止未确认的破坏性命令（如批量删除、重置历史、`rm -rf`）。
 - 对外部系统写操作（消息发送、远程执行、飞书群消息）需明确任务目的。
 - 推送代码 / 合并变更前，先确认 handoff 记录存在。
 
-## Config Hygiene
+## 配置卫生
 
 - 优先项目级配置（`.claude/settings.json`），减少对全局 `~/.claude` 的副作用。
 - 涉及代理/认证修改时，记录回滚路径（旧值 → 新值）。

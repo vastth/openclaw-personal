@@ -1,4 +1,4 @@
-# Task Board (Copilot <-> Claude)
+# 任务看板（Copilot <-> Claude）
 
 说明:
 
@@ -6,7 +6,7 @@
 - 改状态前后都要更新时间。
 - 切换 Owner 时必须追加 handoff 记录。
 
-| Task ID | Title | Owner Agent | Status | File Lock | Updated At | Notes |
+| 任务 ID | 标题 | Owner Agent | 状态 | 文件锁 | 更新时间 | 备注 |
 |---|---|---|---|---|---|---|
 | OC-001 | 模型路由策略优化 | — | TODO | `openclaw.json` | 2026-03-05 | 待规划具体策略 |
 | OC-002 | 网关启动参数清理 | — | TODO | `gateway.cmd` | 2026-03-05 | 待 Copilot 执行 |
@@ -19,6 +19,7 @@
 | OC-009 | 同步 Claude Code 架构改动归档 | Copilot | DONE | `docs/TASK_BOARD.md`, `docs/handoffs/2026-03-06.md` | 2026-03-06 | 归档 OC-006/007/008 变更要点与验证口径 |
 | OC-010 | 安全清理并准备 GitHub 推送 | Copilot | DONE | `.gitignore`, `openclaw.example.json`, `docs/**` | 2026-03-06 | 已初始化 git 并完成安全首提，等待创建 GitHub 远程 |
 | OC-011 | 项目可汉化内容整理与中文优先约束 | Copilot | DONE | `CLAUDE.md`, `.github/**`, `.claude/**`, `docs/**` | 2026-03-06 | 已汉化关键说明与模板，并将两个 agent 默认中文要求写入规则 |
+| OC-012 | README 中文首页与 Markdown 持续汉化 | Copilot | DONE | `README.md`, `docs/**`, `.claude/**` | 2026-03-06 | 已补中文首页、继续汉化高频 Markdown，并统一 handoff 中文字段风格 |
 
 ## 状态说明
 

@@ -1,4 +1,4 @@
-# OpenClaw Security Checklist
+# OpenClaw 安全检查清单
 
 **双 Agent 共用。** 任何变更在推 REVIEW 前，实现者（通常是 Copilot）自查；审查者（通常是 Claude Code）复核。
 

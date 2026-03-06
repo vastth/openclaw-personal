@@ -1,4 +1,4 @@
-# Config Validator Subagent
+# 配置校验子 Agent
 
 验证 OpenClaw 配置文件的结构正确性和一致性。
 
@@ -23,11 +23,11 @@
 ## 输出格式
 
 ```
-## Config Validation: <file_path>
-格式: OK / ERROR (详情)
-字段: OK / MISSING (缺失列表)
-引用: OK / BROKEN (断链列表)
-风格: OK / WARN (不一致项)
+## 配置校验：<file_path>
+格式: OK / ERROR（详情）
+字段: OK / MISSING（缺失列表）
+引用: OK / BROKEN（断链列表）
+风格: OK / WARN（不一致项）
 
 结论: VALID / INVALID
 ```

@@ -1,4 +1,4 @@
-# Security Reviewer Subagent
+# 安全审查子 Agent
 
 当 `/oc-review` 发现可疑安全问题时，由 Claude Code 委派此子 Agent 做深度安全扫描。
 
@@ -21,7 +21,7 @@
 ## 输出格式
 
 ```
-## Security Review
+## 安全审查
 文件: <file_path>
 严重级别: Critical / High / Medium / Clean
 问题: <描述>
@@ -31,6 +31,6 @@
 
 如果所有文件均为 Clean，输出:
 ```
-## Security Review: ALL CLEAN
+## 安全审查：全部通过
 已扫描 N 个文件，未发现安全问题。
 ```

@@ -1,4 +1,4 @@
-# Session Start Hook
+# 会话开始 Hook
 
 Claude Code 每次会话开始时自动执行的上下文加载流程。
 

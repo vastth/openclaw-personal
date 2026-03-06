@@ -1,4 +1,4 @@
-# Pre-Review Gate Hook
+# Review 前置门禁 Hook
 
 在 Claude Code 将任何任务从 REVIEW 推进到 DONE 之前自动触发的检查。
 

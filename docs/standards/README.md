@@ -1,4 +1,4 @@
-# OpenClaw Shared Standards
+# OpenClaw 共享标准
 
 此目录存放 **Copilot 和 Claude Code 共同遵守** 的质量标准。
 

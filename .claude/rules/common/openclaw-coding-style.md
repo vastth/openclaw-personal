@@ -1,4 +1,4 @@
-# OpenClaw Coding Style Rule
+# OpenClaw 编码风格规则
 
 适用范围：本仓库所有代码与配置变更（JSON5、JS、Shell、Markdown）。
 
