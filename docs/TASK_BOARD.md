@@ -17,7 +17,7 @@
 | OC-007 | 五层架构本土化（Skills/Hooks/Subagents/MCP/Plugins） | Claude Code | DONE | `.claude/**`, `.github/**`, `docs/standards/**` | 2026-03-06 | 共享标准层 + hooks + subagents + copilot 指令同步 |
 | OC-008 | 双向角色模型重构（模式 A/B） | Claude Code | DONE | `.claude/rules/**`, `.claude/commands/**`, `CLAUDE.md`, `.github/**` | 2026-03-06 | 角色不固定 → 模式 A（Copilot 实现）+ 模式 B（Claude Code 架构） |
 | OC-009 | 同步 Claude Code 架构改动归档 | Copilot | DONE | `docs/TASK_BOARD.md`, `docs/handoffs/2026-03-06.md` | 2026-03-06 | 归档 OC-006/007/008 变更要点与验证口径 |
-| OC-010 | 安全清理并准备 GitHub 推送 | Copilot | IN_PROGRESS | `.gitignore`, `openclaw.example.json`, `docs/**` | 2026-03-06 | 初始化 git 前先排除密钥、会话、凭据与本地配置 |
+| OC-010 | 安全清理并准备 GitHub 推送 | Copilot | DONE | `.gitignore`, `openclaw.example.json`, `docs/**` | 2026-03-06 | 已初始化 git 并完成安全首提，等待创建 GitHub 远程 |
 
 ## Status Legend
 
