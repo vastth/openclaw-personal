@@ -6,11 +6,70 @@
     "CLAUDE_CODE_SUBAGENT_MODEL": "haiku"
   },
   "disabledMcpServers": [],
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  },
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Session Start] Read TASK_BOARD.md. Find your task. Read the last matching active handoff section. Use archive only if more history is needed.'"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
-        "matcher": "Edit(file_path=**/TASK_BOARD.md*)",
-        "command": "echo '[Pre-Review Gate] Reminder: REVIEW->DONE requires /oc-review pass + handoff record. Verify before proceeding.'"
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Check if the file being edited is TASK_BOARD.md. If so, remind: REVIEW->DONE requires /oc-review pass + handoff record. If the file is not TASK_BOARD.md, return ok.",
+            "model": "claude-haiku-4-5"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Check if a security-sensitive file was modified (openclaw.json, settings.json, or any file with 'key', 'token', 'secret' in name or content). If yes, respond with {\"ok\": false, \"reason\": \"Security-sensitive file modified. Consider running /oc-review with security-reviewer subagent.\"}. If no, respond with {\"ok\": true}.",
+            "model": "claude-haiku-4-5"
+          }
+        ]
+      }
+    ],
+    "ConfigChange": [
+      {
+        "matcher": "project_settings",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Config Changed] Run /oc-verify to validate configuration integrity.'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[Task Complete] Remember: update TASK_BOARD.md status and write handoff if switching agents.'"
+          }
+        ]
       }
     ]
   }

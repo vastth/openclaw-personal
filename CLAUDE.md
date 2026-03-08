@@ -18,14 +18,14 @@
 
 1. `docs/AGENT_COLLAB_PROTOCOL.md`
 2. `docs/TASK_BOARD.md`
-3. `docs/handoffs/` 中最新的文件
+3. `docs/handoffs/YYYY-MM-DD.md`（active，仅读当前任务最后一条；追溯时再看 `archive/`）
 4. `.claude/README.md`
 5. `.claude/rules/common/*.md` — 特别是 `openclaw-roles.md`
 
 ## 必须遵守
 
 - 开始编码前，必须先把 `docs/TASK_BOARD.md` 更新为 `IN_PROGRESS` 并标注 Owner。
-- 交接时，必须按 `docs/HANDOFF_NOTE_TEMPLATE.md` 追加记录到 `docs/handoffs/YYYY-MM-DD.md`。
+- 交接时，必须按 `docs/HANDOFF_NOTE_TEMPLATE.md` 同时更新 `docs/handoffs/YYYY-MM-DD.md` 与 `docs/handoffs/archive/YYYY-MM-DD.md`。
 - 不得修改 `TASK_BOARD.md` 中被其他 Agent 锁定的文件。
 - 任务状态必须遵循：`TODO -> IN_PROGRESS -> REVIEW -> DONE`。
 - 优先使用项目级 `.claude/` 配置，不要轻易改全局 `~/.claude`。

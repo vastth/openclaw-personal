@@ -18,14 +18,14 @@
 
 1. `docs/AGENT_COLLAB_PROTOCOL.md`
 2. `docs/TASK_BOARD.md`
-3. `docs/handoffs/` 中最新的文件
+3. `docs/handoffs/YYYY-MM-DD.md`（active，仅读当前任务最后一条；追溯时再看 `archive/`）
 4. `docs/standards/` — 特别是 `config-conventions.md` 和 `security-checklist.md`
 
 ## 必须遵守
 
 - 开始任何代码编辑前，先把 `docs/TASK_BOARD.md` 更新为 `IN_PROGRESS`。
 - 每个任务只允许一个 owner，并遵守文件锁。
-- 交接时，必须在 `docs/handoffs/YYYY-MM-DD.md` 追加记录。
+- 交接时，必须同时更新 `docs/handoffs/YYYY-MM-DD.md` 与 `docs/handoffs/archive/YYYY-MM-DD.md`。
 - 遵循任务流转：`TODO -> IN_PROGRESS -> REVIEW -> DONE`。
 - **作为实现者：REVIEW 前自查 `docs/standards/security-checklist.md`**。
 - **作为验证者：按 `/oc-validate` 流程输出验证报告**。

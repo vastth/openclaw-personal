@@ -138,6 +138,8 @@ openclaw status
 
 - `README.md`
 - `openclaw.example.json`
+- `docs/CONFIG_GUIDE.md`
+- `docs/RUNTIME_LAYOUT.md`
 - `docs/AGENT_COLLAB_PROTOCOL.md`
 - `CLAUDE.md`
 - `.github/copilot-instructions.md`

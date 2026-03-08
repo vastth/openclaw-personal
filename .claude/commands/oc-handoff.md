@@ -5,8 +5,9 @@
 ## 执行步骤
 
 1. 更新 `docs/TASK_BOARD.md` 状态与时间。
-2. 追加 `docs/handoffs/YYYY-MM-DD.md`。
-3. 使用 `docs/HANDOFF_NOTE_TEMPLATE.md` 的结构。
+2. 刷新 `docs/handoffs/YYYY-MM-DD.md` 中该任务的最小状态。
+3. 追加完整记录到 `docs/handoffs/archive/YYYY-MM-DD.md`。
+4. 使用 `docs/HANDOFF_NOTE_TEMPLATE.md` 的 active/archive 双层结构。
 
 ## 必须包含
 

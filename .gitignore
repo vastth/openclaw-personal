@@ -10,6 +10,8 @@ __pycache__/
 !.env.example
 openclaw.json
 openclaw.json.bak*
+openclaw.json.pre-local-*.bak
+openclaw.tmp.validate.json
 update-check.json
 exec-approvals.json
 
@@ -17,6 +19,7 @@ exec-approvals.json
 .claude/settings.local.json
 
 # OpenClaw runtime state
+browser/
 logs/
 delivery-queue/
 media/inbound/

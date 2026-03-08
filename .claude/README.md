@@ -23,12 +23,13 @@
     oc-verify.md           最小验证
     oc-handoff.md          交接打包
     oc-checkpoint.md       任务存档点
-  hooks/                 # [Hooks 层] 自动化触发器（Claude Code 专属）
-    session-start.md       会话开始时加载上下文
-    pre-review-gate.md     REVIEW→DONE 前的自动检查
-  agents/                # [Subagents 层] 专用子 Agent（2 个）
+  hooks/                 # [Hooks 层] 自动化触发器（5 个 hook 接入 settings.json）
+    session-start.md       会话开始时加载上下文（SessionStart）
+    pre-review-gate.md     REVIEW→DONE 前的自动检查（PreToolUse prompt）
+  agents/                # [Subagents 层] 专用子 Agent（2 个 + 调度规则）
     security-reviewer.md   深度安全扫描
     config-validator.md    配置结构验证
+    dispatch-rules.md      子 Agent 自动调度规则（/oc-review 引用）
 ```
 
 ## 五层架构对照
@@ -37,9 +38,9 @@
 |---|---|---|---|
 | Skills/Commands | 6 个命令 | `.claude/commands/` 原生加载 | 通过 `docs/standards/` 共享标准 + `/oc-validate` |
 | Rules | 5 个规则 | `.claude/rules/` 原生加载 | `.github/copilot-instructions.md` 引用 |
-| Hooks | 2 个触发器 | `settings.json` hooks 字段 | 不支持（Claude Code 专属） |
-| Subagents | 2 个子 Agent | Agent tool 调用 | 不支持（Claude Code 专属） |
-| MCP | 未启用 | 支持（待需要时添加） | VS Code MCP 支持（待需要时添加） |
+| Hooks | 5 个 hook | `settings.json` hooks 字段（SessionStart/PreToolUse/PostToolUse/ConfigChange/Stop） | 不支持（Claude Code 专属） |
+| Subagents | 2 个子 Agent + 调度规则 | `/oc-review` 自动调度 via Agent tool | 不支持（Claude Code 专属） |
+| MCP | 1 个服务器 | GitHub MCP（`@modelcontextprotocol/server-github`，已标注 deprecated，当前可用，后续关注官方迁移指引） | VS Code MCP 支持（待需要时添加） |
 
 ## 共享标准层
 
@@ -54,6 +55,16 @@
 - `.claude` 补强 Claude Code 的把关能力（review + hooks + subagents）。
 - `.github/copilot-instructions.md` 补强 Copilot 的实现质量。
 - 交接仍统一写入 `docs/TASK_BOARD.md` 与 `docs/handoffs/`。
+
+## settings.json 关键参数说明
+
+`settings.json` 中除 hooks 和 mcpServers 外，还包含以下环境变量（通过 `env` 字段注入）：
+
+| 变量名 | 当前值 | 用途 |
+|---|---|---|
+| `MAX_THINKING_TOKENS` | `10000` | 限制扩展思考（extended thinking）最大 token 数，防止单次消耗过高 |
+| `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | `50` | 上下文压缩触发阈值，设为 50% 时会在上下文用量超过一半时触发自动压缩 |
+| `CLAUDE_CODE_SUBAGENT_MODEL` | `haiku` | 子 Agent（hooks prompt / Agent tool 调用）默认使用 Haiku 模型，节省成本 |
 
 ## 语言约定
 

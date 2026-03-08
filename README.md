@@ -12,7 +12,7 @@
 
 - `.claude/`：Claude Code 项目级规则、命令、hooks、subagents。
 - `.github/copilot-instructions.md`：Copilot 项目级指令。
-- `docs/`：协作协议、handoff、标准文档、分析文档。
+- `docs/`：协作协议、handoff active/archive、标准文档、分析文档。
 - `completions/`：OpenClaw 命令补全脚本。
 - `gateway.cmd`：本地网关启动脚本。
 - `openclaw.example.json`：可公开分享的配置示例文件。
@@ -37,7 +37,7 @@
 
 1. 先阅读 `docs/AGENT_COLLAB_PROTOCOL.md`。
 2. 查看 `docs/TASK_BOARD.md` 了解当前任务状态。
-3. 阅读最新的 `docs/handoffs/` 获取最近变更上下文。
+3. 阅读当日 `docs/handoffs/YYYY-MM-DD.md` 获取最小可执行状态；只有在需要追溯历史时再看 `docs/handoffs/archive/`。
 4. 如需本地运行，参考 `openclaw.example.json` 创建自己的 `openclaw.json`。
 
 ## 跨设备部署
@@ -52,11 +52,37 @@
 - 新设备本地补齐真实 `openclaw.json`、凭据、身份和代理配置
 - 敏感信息与运行态数据不进入 Git，而是单独恢复
 
+## Web 浏览与检索
+
+当前配置已经为 `OpenClaw` 显式接入三类网页能力：
+
+- `browser`：打开和操作网页，适合 JS 站点、需要点击或可视化核验的页面
+- `web_fetch`：直接抓取网页正文，适合新闻、博客、文档等静态内容
+- `web_search`：联网检索互联网结果，适合先找资料入口再深入阅读
+
+默认策略：
+
+- 先 `web_search` 找入口
+- 再用 `web_fetch` 抓正文
+- 遇到动态页面、登录态页面或页面抓取失败时，切到 `browser`
+
+注意：
+
+- `browser` 和 `web_fetch` 配置后可直接使用
+- `web_search` 仍需要额外配置搜索提供商 API Key，推荐执行 `openclaw configure --section web`
+- 如果未配置 `web_search` 的 Key，主工作区中的 agent 指令会让它自动回退到 `browser` 打开网页检索
+
+当前验证结论：
+
+- 当前未配置搜索 API Key，但飞书端已验证 `web_fetch + browser fallback` 可完成联网取数与结果回传。
+
 ## 相关文档
 
 - `CLAUDE.md`
 - `.github/copilot-instructions.md`
 - `docs/HANDOFF_NOTE_TEMPLATE.md`
+- `docs/CONFIG_GUIDE.md`
+- `docs/RUNTIME_LAYOUT.md`
 - `docs/standards/README.md`
 - `docs/DEPLOY_ON_NEW_DEVICE.md`
 

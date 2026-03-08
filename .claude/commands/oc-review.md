@@ -9,6 +9,13 @@
 
 ## 执行步骤
 
+### 0. 子 Agent 调度（自动）
+
+读取 `.claude/agents/dispatch-rules.md`，根据变更文件列表判断是否需要调用子 Agent：
+- 匹配安全规则 → 调用 security-reviewer（读取 `.claude/agents/security-reviewer.md`）
+- 匹配配置规则 → 调用 config-validator（读取 `.claude/agents/config-validator.md`）
+- 将子 Agent 结果汇总到下方审查报告的对应级别中。
+
 ### 1. 定位变更范围
 
 识别本次任务涉及的文件清单（来自 handoff 记录或 `TASK_BOARD.md`）。
